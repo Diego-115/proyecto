@@ -5,4 +5,3 @@ streamlit-webrtc
 av
 pillow
 gdown
-cv2
