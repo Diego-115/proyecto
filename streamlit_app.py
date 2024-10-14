@@ -7,7 +7,6 @@ import av
 from PIL import Image
 import gdown
 import os
-import bcrypt
 import asyncio
 import tempfile
 
