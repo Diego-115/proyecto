@@ -142,9 +142,6 @@ def main():
                 if start_detection:
                     video_transformer.set_params(model, confidence_slider)
                 webrtc_streamer(key="example", video_processor_factory=lambda: video_transformer, rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
-      
-
-
 
 # SI SE SELECCIONA SUBIR UNA IMAGEN
 
@@ -174,7 +171,6 @@ def main():
                                 detected_class = classes[idx]
                                 detected_classes.add(detected_class)
                                 col3.markdown(f"<div style='background-color:white;padding:5px;border-radius:5px;margin:5px 0; color:black;'><b>Clase:</b> <span style='color:black'>{detected_class}</span><br><b>Confianza:</b> {confidence:.2f}<br></div>", unsafe_allow_html=True)
-                                st.balloons()
                         else:
                             col3.write("No se detectaron objetos.")
 
@@ -215,16 +211,8 @@ def main():
                 cap.release()
                 out.release()
                 st.success('Procesamiento de vídeo completo.')
-                st.balloons()
- #           with col2:
-        #       st.video('output.mp4')
-#           with open('output.mp4', 'rb') as f:
-  #              video_data = f.read()
-   #         st.markdown("Descargar video procesado:")
-    #    st.download_button('Descargar', video_data, 'output.mp4', 'video/mp4')
-
+            with col2:
+                st.video('output.mp4')
 
 if __name__ == "__main__":
     main()
-
-
