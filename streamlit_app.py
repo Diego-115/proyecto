@@ -141,15 +141,8 @@ def main():
                 video_transformer = VideoTransformer()
                 if start_detection:
                     video_transformer.set_params(model, confidence_slider)
-                webrtc_streamer(
-                    key="example",
-                    video_processor_factory=lambda: video_transformer,
-                    rtc_configuration={
-                        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}],
-                        "bundlePolicy": "max-bundle"
-                    },
-                    media_stream_constraints={"video": True, "audio": False},
-                )        
+                webrtc_streamer(key="example", video_processor_factory=lambda: video_transformer, rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
+      
 
 
 
